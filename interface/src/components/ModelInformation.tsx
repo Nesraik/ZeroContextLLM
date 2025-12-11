@@ -28,7 +28,7 @@ const ModelInformation = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const response = await fetch("http://localhost:8000/models");
+        const response = await fetch(import.meta.env.VITE_MODEL_CONFIG_ENDPOINT);
         if (response.ok) {
           const data = await response.json();
           setConfigs(data);
@@ -44,7 +44,7 @@ const ModelInformation = () => {
 
   const saveToBackend = async (updatedConfigs: ModelConfig[]) => {
     try {
-      await fetch("http://localhost:8000/models", {
+      await fetch(import.meta.env.VITE_MODEL_CONFIG_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedConfigs),
