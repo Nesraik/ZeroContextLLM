@@ -1,0 +1,126 @@
+.sidebar-container {
+  height: 100vh;
+  background-color: #1e1e1e;
+  border-right: 1px solid #333;
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  width: 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  white-space: nowrap; 
+}
+
+.sidebar-container.open {
+  width: 280px;
+}
+
+.sidebar-header {
+  height: 60px;
+  min-height: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  color: #e3e3e3;
+}
+
+.sidebar-logo {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 8px 0;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 24px;
+  text-decoration: none;
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.nav-item:hover, .nav-item.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.icon {
+  margin-right: 12px;
+  min-width: 20px; 
+  text-align: center;
+}
+
+.save-btn-wrapper {
+  padding: 8px 24px;
+}
+
+.save-btn {
+  background-color: #333;
+  color: #e3e3e3;
+  border: 1px solid #555;
+  border-radius: 16px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sidebar-footer {
+  padding: 16px 0;
+  border-top: 1px solid #333;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  color: #e3e3e3;
+  gap: 12px;
+}
+
+.avatar {
+  min-width: 32px;
+  height: 32px;
+  background-color: #7c4dff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.nav-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none; 
+  background-color: transparent;
+}
+
+.nav-item.disabled:hover {
+  background-color: transparent;
+  color: inherit;
+}

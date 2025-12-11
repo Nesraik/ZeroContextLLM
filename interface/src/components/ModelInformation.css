@@ -1,0 +1,257 @@
+/* Container */
+.model-information-container {
+  padding: 32px 48px;
+  color: #e3e3e3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+.table-wrapper {
+  flex: 1;
+  overflow-y: auto; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  width: 100%;
+  border-bottom: 1px solid #333;
+  margin-bottom: 0; 
+  color: #9ca3af;
+  font-size: 0.9rem;
+  
+  position: sticky; 
+  top: 0;
+  z-index: 50; 
+  background-color: #131314; 
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 0; 
+  width: 100%;
+  border-bottom: 1px solid #2a2a2a;
+  color: #e3e3e3;
+  font-size: 0.95rem;
+}
+
+.col {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: normal;
+  padding-right: 16px;
+  flex: 1; 
+}
+
+.action-col {
+  width: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  position: relative;
+  z-index: 10;
+}
+
+.add-model-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #e3e3e3;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.add-model-btn:hover {
+  background-color: #e3e3e3;
+  color: #000;
+  border-color: #e3e3e3;
+}
+
+.kebab-menu-btn {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.kebab-menu-btn:hover, .kebab-menu-btn.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.action-dropdown {
+  position: absolute;
+  top: 35px;    
+  right: 45px;  
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 6px 0;
+  min-width: 140px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.action-dropdown button {
+  background: transparent;
+  border: none;
+  color: #e3e3e3;
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.action-dropdown button:hover {
+  background-color: #3c3c3c;
+}
+
+.action-dropdown button.danger {
+  color: #ff8a80;
+}
+
+.action-dropdown button.danger:hover {
+  background-color: rgba(255, 138, 128, 0.1);
+}
+
+.empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #555;
+  gap: 16px;
+  min-height: 200px; 
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  width: 320px !important;
+  max-width: 90vw !important;
+  flex-shrink: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.modal-content h3 {
+  margin: 0 0 4px 0;
+  color: #e3e3e3;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  color: #a1a1aa;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #f4f4f5;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #7c4dff;
+  background-color: #303035;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  border: 1px solid #3f3f46;
+  color: #a1a1aa;
+}
+
+.cancel-btn:hover {
+  background-color: #27272a;
+  color: #fff;
+}
+
+.confirm-btn {
+  background-color: #e3e3e3;
+  color: #18181b;
+}
+
+.confirm-btn:hover {
+  background-color: #fff;
+  transform: translateY(-1px);
+}
